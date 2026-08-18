@@ -268,25 +268,11 @@ const Footer = () => {
 
         {/* Bottom Bar */}
         <div className="container mx-auto px-4 py-6">
-          <div className="max-w-7xl mx-auto flex flex-wrap justify-center md:justify-between items-center gap-4 text-sm text-gray-400">
+          <div className="max-w-7xl mx-auto flex flex-wrap justify-center items-center text-sm text-gray-400">
             <p>
               © {new Date().getFullYear()}{" "}
               {settings.church_name || "Merciful Centre"}. All rights reserved.
             </p>
-            <div className="flex gap-6">
-              <Link
-                href="/privacy-policy"
-                className="hover:text-purple-400 transition-colors"
-              >
-                Privacy Policy
-              </Link>
-              <Link
-                href="/terms"
-                className="hover:text-purple-400 transition-colors"
-              >
-                Terms of Use
-              </Link>
-            </div>
           </div>
         </div>
       </div>
