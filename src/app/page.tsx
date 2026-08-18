@@ -142,7 +142,7 @@ export default function Home() {
             {/* About Us Card */}
             <Link
               href="/about"
-              className="group relative overflow-hidden rounded-2xl aspect-[4/3]"
+              className="group relative overflow-hidden rounded-lg aspect-[3/4]"
             >
               <Image
                 src="/images/about-us.jpg"
@@ -150,7 +150,8 @@ export default function Home() {
                 fill
                 className="object-cover transition-transform duration-500 group-hover:scale-110"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent">
+              <div className="absolute inset-0 bg-gradient-to-b from-white via-white/0 to-transparent"></div>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent">
                 <div className="absolute bottom-0 left-0 p-8">
                   <span className="text-white/80 text-sm font-poppins mb-2 block">
                     WHO WE ARE
@@ -181,7 +182,7 @@ export default function Home() {
             {/* Connect Card */}
             <Link
               href="/connect"
-              className="group relative overflow-hidden rounded-2xl aspect-[4/3]"
+              className="group relative overflow-hidden rounded-lg aspect-[3/4]"
             >
               <Image
                 src="/images/connect.jpg"
@@ -189,7 +190,8 @@ export default function Home() {
                 fill
                 className="object-cover transition-transform duration-500 group-hover:scale-110"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent">
+              <div className="absolute inset-0 bg-gradient-to-b from-white via-white/0 to-transparent"></div>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent">
                 <div className="absolute bottom-0 left-0 p-8">
                   <span className="text-white/80 text-sm font-poppins mb-2 block">
                     JOIN OUR COMMUNITY
@@ -220,7 +222,7 @@ export default function Home() {
             {/* Celebrations Card */}
             <Link
               href="/celebrations"
-              className="group relative overflow-hidden rounded-2xl aspect-[4/3]"
+              className="group relative overflow-hidden rounded-lg aspect-[3/4]"
             >
               <Image
                 src="/images/celebrations.jpg"
@@ -228,7 +230,8 @@ export default function Home() {
                 fill
                 className="object-cover transition-transform duration-500 group-hover:scale-110"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent">
+              <div className="absolute inset-0 bg-gradient-to-b from-white via-white/0 to-transparent"></div>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent">
                 <div className="absolute bottom-0 left-0 p-8">
                   <span className="text-white/80 text-sm font-poppins mb-2 block">
                     WONDERFULL TIME WITH GOD
