@@ -351,17 +351,19 @@ export default function AboutPage() {
                 {/* Community Support Card */}
                 <motion.div
                   variants={scaleUp}
-                  className="group relative bg-white rounded-3xl p-8 hover:translate-y-[-8px] transition-all duration-500"
+                  className="group relative bg-white/80 backdrop-blur-sm border border-purple-100/50 rounded-3xl p-8 hover:-translate-y-2 transition-all duration-500 shadow-xl shadow-purple-900/5 hover:shadow-2xl hover:shadow-purple-500/10"
                 >
-                  <div className="absolute inset-0 bg-gradient-to-br from-purple-100 to-transparent rounded-3xl transform rotate-[-2deg] group-hover:rotate-0 transition-transform duration-300"></div>
-                  <div className="relative z-10">
+                  {/* Subtle top gradient line */}
+                  <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-purple-400 to-purple-600 rounded-t-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                  
+                  <div className="relative z-10 flex flex-col h-full">
                     <div className={cardStyles.iconContainer}>
                       <HeartIcon className={cardStyles.icon} />
                     </div>
-                    <h3 className="text-2xl font-bold text-gray-900 text-center mb-4">
+                    <h3 className="text-2xl font-bold text-gray-900 text-center mb-4 group-hover:text-purple-700 transition-colors duration-300">
                       Supporting the Poor
                     </h3>
-                    <p className="text-gray-600 text-center">
+                    <p className="text-gray-600 text-center leading-relaxed">
                       Providing essential support and resources to those in need
                       within our community.
                     </p>
@@ -371,17 +373,19 @@ export default function AboutPage() {
                 {/* Place of Refuge Card */}
                 <motion.div
                   variants={scaleUp}
-                  className="group relative bg-white rounded-3xl p-8 hover:translate-y-[-8px] transition-all duration-500"
+                  className="group relative bg-white/80 backdrop-blur-sm border border-purple-100/50 rounded-3xl p-8 hover:-translate-y-2 transition-all duration-500 shadow-xl shadow-purple-900/5 hover:shadow-2xl hover:shadow-purple-500/10"
                 >
-                  <div className="absolute inset-0 bg-gradient-to-br from-purple-100 to-transparent rounded-3xl transform rotate-[-2deg] group-hover:rotate-0 transition-transform duration-300"></div>
-                  <div className="relative z-10">
+                  {/* Subtle top gradient line */}
+                  <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-purple-400 to-purple-600 rounded-t-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                  
+                  <div className="relative z-10 flex flex-col h-full">
                     <div className={cardStyles.iconContainer}>
                       <HomeIcon className={cardStyles.icon} />
                     </div>
-                    <h3 className="text-2xl font-bold text-gray-900 text-center mb-4">
+                    <h3 className="text-2xl font-bold text-gray-900 text-center mb-4 group-hover:text-purple-700 transition-colors duration-300">
                       Place of Refuge
                     </h3>
-                    <p className="text-gray-600 text-center">
+                    <p className="text-gray-600 text-center leading-relaxed">
                       Creating a welcoming sanctuary for all who seek salvation
                       and spiritual growth.
                     </p>
@@ -391,17 +395,19 @@ export default function AboutPage() {
                 {/* Strengthening Families Card */}
                 <motion.div
                   variants={scaleUp}
-                  className="group relative bg-white rounded-3xl p-8 hover:translate-y-[-8px] transition-all duration-500"
+                  className="group relative bg-white/80 backdrop-blur-sm border border-purple-100/50 rounded-3xl p-8 hover:-translate-y-2 transition-all duration-500 shadow-xl shadow-purple-900/5 hover:shadow-2xl hover:shadow-purple-500/10"
                 >
-                  <div className="absolute inset-0 bg-gradient-to-br from-purple-100 to-transparent rounded-3xl transform rotate-[-2deg] group-hover:rotate-0 transition-transform duration-300"></div>
-                  <div className="relative z-10">
+                  {/* Subtle top gradient line */}
+                  <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-purple-400 to-purple-600 rounded-t-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                  
+                  <div className="relative z-10 flex flex-col h-full">
                     <div className={cardStyles.iconContainer}>
                       <UserGroupIcon className={cardStyles.icon} />
                     </div>
-                    <h3 className="text-2xl font-bold text-gray-900 text-center mb-4">
+                    <h3 className="text-2xl font-bold text-gray-900 text-center mb-4 group-hover:text-purple-700 transition-colors duration-300">
                       Strengthening Families
                     </h3>
-                    <p className="text-gray-600 text-center">
+                    <p className="text-gray-600 text-center leading-relaxed">
                       Empowering youth and families through guidance, support,
                       and community.
                     </p>
@@ -460,17 +466,19 @@ export default function AboutPage() {
                 {/* Worship Card */}
                 <motion.div
                   variants={scaleUp}
-                  className="group relative overflow-hidden"
+                  className="group relative bg-white/80 backdrop-blur-sm border border-purple-100/50 rounded-3xl p-8 hover:-translate-y-2 transition-all duration-500 shadow-xl shadow-purple-900/5 hover:shadow-2xl hover:shadow-purple-500/10"
                 >
-                  <div className="absolute inset-0 bg-gradient-to-br from-purple-600 to-purple-400 rounded-[2.5rem] opacity-10 group-hover:opacity-20 transition-opacity duration-300"></div>
-                  <div className="relative bg-white rounded-[2rem] p-8 shadow-xl hover:shadow-2xl transition-all duration-500 transform group-hover:translate-y-[-8px] border border-purple-100">
+                  {/* Subtle top gradient line */}
+                  <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-purple-400 to-purple-600 rounded-t-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                  
+                  <div className="relative z-10 flex flex-col h-full">
                     <div className={cardStyles.iconContainer}>
                       <HandRaisedIcon className={cardStyles.icon} />
                     </div>
-                    <h3 className="text-2xl font-bold text-gray-900 text-center mb-4">
+                    <h3 className="text-2xl font-bold text-gray-900 text-center mb-4 group-hover:text-purple-700 transition-colors duration-300">
                       Worship
                     </h3>
-                    <p className="text-gray-600 text-center">
+                    <p className="text-gray-600 text-center leading-relaxed">
                       Expressing reverence and adoration for God through
                       meaningful worship.
                     </p>
@@ -480,17 +488,19 @@ export default function AboutPage() {
                 {/* Evangelism Card */}
                 <motion.div
                   variants={scaleUp}
-                  className="group relative overflow-hidden"
+                  className="group relative bg-white/80 backdrop-blur-sm border border-purple-100/50 rounded-3xl p-8 hover:-translate-y-2 transition-all duration-500 shadow-xl shadow-purple-900/5 hover:shadow-2xl hover:shadow-purple-500/10"
                 >
-                  <div className="absolute inset-0 bg-gradient-to-br from-purple-600 to-purple-400 rounded-[2.5rem] opacity-10 group-hover:opacity-20 transition-opacity duration-300"></div>
-                  <div className="relative bg-white rounded-[2rem] p-8 shadow-xl hover:shadow-2xl transition-all duration-500 transform group-hover:translate-y-[-8px] border border-purple-100">
+                  {/* Subtle top gradient line */}
+                  <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-purple-400 to-purple-600 rounded-t-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                  
+                  <div className="relative z-10 flex flex-col h-full">
                     <div className={cardStyles.iconContainer}>
                       <SparklesIcon className={cardStyles.icon} />
                     </div>
-                    <h3 className="text-2xl font-bold text-gray-900 text-center mb-4">
+                    <h3 className="text-2xl font-bold text-gray-900 text-center mb-4 group-hover:text-purple-700 transition-colors duration-300">
                       Evangelism
                     </h3>
-                    <p className="text-gray-600 text-center">
+                    <p className="text-gray-600 text-center leading-relaxed">
                       Spreading the Christian gospel through public preaching
                       and personal witness.
                     </p>
@@ -500,17 +510,19 @@ export default function AboutPage() {
                 {/* Service Card */}
                 <motion.div
                   variants={scaleUp}
-                  className="group relative overflow-hidden"
+                  className="group relative bg-white/80 backdrop-blur-sm border border-purple-100/50 rounded-3xl p-8 hover:-translate-y-2 transition-all duration-500 shadow-xl shadow-purple-900/5 hover:shadow-2xl hover:shadow-purple-500/10"
                 >
-                  <div className="absolute inset-0 bg-gradient-to-br from-purple-600 to-purple-400 rounded-[2.5rem] opacity-10 group-hover:opacity-20 transition-opacity duration-300"></div>
-                  <div className="relative bg-white rounded-[2rem] p-8 shadow-xl hover:shadow-2xl transition-all duration-500 transform group-hover:translate-y-[-8px] border border-purple-100">
+                  {/* Subtle top gradient line */}
+                  <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-purple-400 to-purple-600 rounded-t-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                  
+                  <div className="relative z-10 flex flex-col h-full">
                     <div className={cardStyles.iconContainer}>
                       <HeartIcon className={cardStyles.icon} />
                     </div>
-                    <h3 className="text-2xl font-bold text-gray-900 text-center mb-4">
+                    <h3 className="text-2xl font-bold text-gray-900 text-center mb-4 group-hover:text-purple-700 transition-colors duration-300">
                       Service
                     </h3>
-                    <p className="text-gray-600 text-center">
+                    <p className="text-gray-600 text-center leading-relaxed">
                       Empowering the needy through our food bank and clothes
                       bank initiatives.
                     </p>
@@ -520,17 +532,19 @@ export default function AboutPage() {
                 {/* Education Card */}
                 <motion.div
                   variants={scaleUp}
-                  className="group relative overflow-hidden"
+                  className="group relative bg-white/80 backdrop-blur-sm border border-purple-100/50 rounded-3xl p-8 hover:-translate-y-2 transition-all duration-500 shadow-xl shadow-purple-900/5 hover:shadow-2xl hover:shadow-purple-500/10"
                 >
-                  <div className="absolute inset-0 bg-gradient-to-br from-purple-600 to-purple-400 rounded-[2.5rem] opacity-10 group-hover:opacity-20 transition-opacity duration-300"></div>
-                  <div className="relative bg-white rounded-[2rem] p-8 shadow-xl hover:shadow-2xl transition-all duration-500 transform group-hover:translate-y-[-8px] border border-purple-100">
+                  {/* Subtle top gradient line */}
+                  <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-purple-400 to-purple-600 rounded-t-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                  
+                  <div className="relative z-10 flex flex-col h-full">
                     <div className={cardStyles.iconContainer}>
                       <LightBulbIcon className={cardStyles.icon} />
                     </div>
-                    <h3 className="text-2xl font-bold text-gray-900 text-center mb-4">
+                    <h3 className="text-2xl font-bold text-gray-900 text-center mb-4 group-hover:text-purple-700 transition-colors duration-300">
                       Education
                     </h3>
-                    <p className="text-gray-600 text-center">
+                    <p className="text-gray-600 text-center leading-relaxed">
                       Providing systematic instruction and spiritual education
                       for growth and development.
                     </p>
@@ -543,7 +557,7 @@ export default function AboutPage() {
       </section>
 
       {/* Leadership Section */}
-      <section className="py-24 black-background relative overflow-hidden">
+      <section className="py-24 bg-black relative overflow-hidden">
         {/* Background Pattern */}
         <div className="absolute inset-0 opacity-5">
           <div
