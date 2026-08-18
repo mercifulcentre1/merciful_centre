@@ -1,4 +1,5 @@
 import { Event } from "@/types";
+import { getStorageUrl } from "@/lib/api";
 import { CalendarDays, Clock, MapPin, X } from "lucide-react";
 
 interface EventModalProps {
@@ -13,13 +14,6 @@ export default function EventModal({
   onClose,
 }: EventModalProps) {
   if (!isOpen) return null;
-
-  const getImageUrl = (url: string) => {
-    if (!url) return "";
-    if (url.startsWith("http")) return url;
-    const baseUrl = process.env.NEXT_PUBLIC_API_URL?.replace("/api", "") || "http://localhost:8080";
-    return `${baseUrl}/${url}`;
-  };
 
   return (
     <div
@@ -49,7 +43,7 @@ export default function EventModal({
           <div className="relative h-64 rounded-t-2xl overflow-hidden">
             {(event.image || (event as any).image_url) ? (
               <img
-                src={getImageUrl(event.image || (event as any).image_url)}
+                src={getStorageUrl(event.image || (event as any).image_url)}
                 alt={event.title}
                 className="w-full h-full object-cover"
               />

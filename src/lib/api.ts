@@ -9,6 +9,24 @@ export const buildApiUrl = (path: string) => {
   return `${API_BASE_URL}${path}`;
 };
 
+/**
+ * Resolves a stored file path (e.g. "api/storage/events/file.jpg" or
+ * "storage/events/file.jpg") to an absolute URL pointing at the backend.
+ *
+ * The backend stores paths like "api/storage/events/..." so we only need
+ * to prepend the bare backend origin (no "/api" suffix).
+ */
+export const getStorageUrl = (path: string | null | undefined): string => {
+  if (!path) return "";
+  // Already a full URL – return as-is
+  if (path.startsWith("http://") || path.startsWith("https://")) return path;
+  // Derive the backend origin from API_BASE_URL by stripping the "/api" suffix
+  const backendOrigin = API_BASE_URL.replace(/\/api$/, "");
+  // Ensure we don't double-slash
+  const cleanPath = path.startsWith("/") ? path.slice(1) : path;
+  return `${backendOrigin}/${cleanPath}`;
+};
+
 // Generic fetch wrapper with error handling
 export async function fetchApi<T>(
   path: string,

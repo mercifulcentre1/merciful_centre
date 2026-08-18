@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { fetchSermons, sermons } from "@/lib/api";
+import { fetchSermons, sermons, getStorageUrl } from "@/lib/api";
 import { Plus, Trash2, Edit2, Video, Search, X, Mic, Headphones } from "lucide-react";
 
 export default function AdminSermons() {
@@ -90,11 +90,6 @@ export default function AdminSermons() {
     setIsSlideOverOpen(true);
   };
 
-  const getFileUrl = (url: string) => {
-    if (url.startsWith("http")) return url;
-    const baseUrl = process.env.NEXT_PUBLIC_API_URL?.replace("/api", "") || "http://localhost:8080";
-    return `${baseUrl}/${url}`;
-  };
 
   const filteredSermons = sermonsList.filter(s => 
     s.title.toLowerCase().includes(searchQuery.toLowerCase()) || 
@@ -160,7 +155,7 @@ export default function AdminSermons() {
                       <div className="flex items-center gap-4">
                         <div className="w-16 h-12 rounded-lg overflow-hidden bg-slate-100 flex-shrink-0 border border-slate-200">
                           {sermon.thumbnail_url ? (
-                            <img src={getFileUrl(sermon.thumbnail_url)} alt={sermon.title} className="w-full h-full object-cover" />
+                            <img src={getStorageUrl(sermon.thumbnail_url)} alt={sermon.title} className="w-full h-full object-cover" />
                           ) : (
                             <div className="w-full h-full flex items-center justify-center bg-indigo-50">
                               <Video className="w-5 h-5 text-indigo-300" />

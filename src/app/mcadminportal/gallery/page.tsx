@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { gallery } from "@/lib/api";
+import { gallery, getStorageUrl } from "@/lib/api";
 import { Plus, Trash2, Edit2, Image as ImageIcon, Search, X, FolderHeart } from "lucide-react";
 
 export default function GalleryPage() {
@@ -87,11 +87,6 @@ export default function GalleryPage() {
     setIsSlideOverOpen(true);
   };
 
-  const getImageUrl = (url: string) => {
-    if (url.startsWith("http")) return url;
-    const baseUrl = process.env.NEXT_PUBLIC_API_URL?.replace("/api", "") || "http://localhost:8080";
-    return `${baseUrl}/${url}`;
-  };
 
   const categories = ["All", "Events", "Worship", "Community", "Youth", "Other"];
 
@@ -161,7 +156,7 @@ export default function GalleryPage() {
               
               {item.image_url ? (
                 <img 
-                  src={getImageUrl(item.image_url)} 
+                  src={getStorageUrl(item.image_url)} 
                   alt={item.title} 
                   className="w-full object-cover"
                 />

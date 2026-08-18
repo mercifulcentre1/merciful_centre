@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { fetchEvents } from "@/lib/api";
+import { fetchEvents, getStorageUrl } from "@/lib/api";
 import { Event } from "@/types";
 import { CalendarDays, Clock, MapPin, ChevronRight } from "lucide-react";
 import EventModal from "./EventModal";
@@ -60,13 +60,6 @@ export default function EventsList({ limit }: EventsListProps) {
 
   const displayEvents = limit ? events.slice(0, limit) : events;
 
-  const getImageUrl = (url: string) => {
-    if (!url) return "";
-    if (url.startsWith("http")) return url;
-    const baseUrl = process.env.NEXT_PUBLIC_API_URL?.replace("/api", "") || "http://localhost:8080";
-    return `${baseUrl}/${url}`;
-  };
-
   return (
     <>
       <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
@@ -80,7 +73,7 @@ export default function EventsList({ limit }: EventsListProps) {
             <div className="relative h-48 overflow-hidden">
               {(event.image || (event as any).image_url) ? (
                 <img
-                  src={getImageUrl(event.image || (event as any).image_url)}
+                  src={getStorageUrl(event.image || (event as any).image_url)}
                   alt={event.title}
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                 />

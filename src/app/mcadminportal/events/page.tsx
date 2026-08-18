@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { fetchEvents, events } from "@/lib/api";
+import { fetchEvents, events, getStorageUrl } from "@/lib/api";
 import { Plus, Trash2, Edit2, Calendar, MapPin, Clock, X, Search, MoreVertical } from "lucide-react";
 
 export default function AdminEvents() {
@@ -92,11 +92,6 @@ export default function AdminEvents() {
     setIsSlideOverOpen(true);
   };
 
-  const getImageUrl = (url: string) => {
-    if (url.startsWith("http")) return url;
-    const baseUrl = process.env.NEXT_PUBLIC_API_URL?.replace("/api", "") || "http://localhost:8080";
-    return `${baseUrl}/${url}`;
-  };
 
   const filteredEvents = eventsList.filter(e => e.title.toLowerCase().includes(searchQuery.toLowerCase()));
 
@@ -140,7 +135,7 @@ export default function AdminEvents() {
               <div className="h-48 bg-slate-100 relative overflow-hidden">
                 {event.image_url ? (
                   <img 
-                    src={getImageUrl(event.image_url)} 
+                    src={getStorageUrl(event.image_url)} 
                     alt={event.title} 
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                   />
