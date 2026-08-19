@@ -8,15 +8,19 @@ import EventModal from "./EventModal";
 
 interface EventsListProps {
   limit?: number;
+  initialEvents?: Event[];
 }
 
-export default function EventsList({ limit }: EventsListProps) {
-  const [events, setEvents] = useState<Event[]>([]);
-  const [isLoading, setIsLoading] = useState(true);
+export default function EventsList({ limit, initialEvents }: EventsListProps) {
+  const [events, setEvents] = useState<Event[]>(initialEvents || []);
+  const [isLoading, setIsLoading] = useState(!initialEvents);
   const [error, setError] = useState<string | null>(null);
   const [selectedEvent, setSelectedEvent] = useState<Event | null>(null);
 
   useEffect(() => {
+    // Skip fetching if initialEvents is provided
+    if (initialEvents) return;
+
     const loadEvents = async () => {
       try {
         setIsLoading(true);
@@ -32,7 +36,7 @@ export default function EventsList({ limit }: EventsListProps) {
     };
 
     loadEvents();
-  }, []);
+  }, [initialEvents]);
 
   useEffect(() => {
     console.log("Current events state:", events);

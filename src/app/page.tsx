@@ -1,32 +1,19 @@
-"use client";
-
 import Link from "next/link";
 import Image from "next/image";
-import { Suspense, useEffect, useState } from "react";
+import { Suspense } from "react";
 import EventsList from "@/components/EventsList";
 import SermonsList from "@/components/SermonsList";
 import CountdownTimer from "@/components/CountdownTimer";
-import { fetchSermons } from "@/lib/api";
-import { Sermon } from "@/types";
+import { fetchSermons, fetchEvents } from "@/lib/api";
 
-export default function Home() {
-  const [sermons, setSermons] = useState<Sermon[]>([]);
-  const [isLoading, setIsLoading] = useState(true);
-
-  useEffect(() => {
-    const loadSermons = async () => {
-      try {
-        const data = await fetchSermons();
-        setSermons(Array.isArray(data) ? data.slice(0, 6) : []); // Show only the 6 most recent sermons
-      } catch (error) {
-        console.error("Error loading sermons:", error);
-      } finally {
-        setIsLoading(false);
-      }
-    };
-
-    loadSermons();
-  }, []);
+export default async function Home() {
+  const [sermonsData, eventsData] = await Promise.all([
+    fetchSermons(),
+    fetchEvents()
+  ]);
+  
+  const sermons = Array.isArray(sermonsData) ? sermonsData.slice(0, 6) : [];
+  const events = Array.isArray(eventsData) ? eventsData.slice(0, 3) : [];
 
   return (
     <div className="min-h-screen">
@@ -445,7 +432,7 @@ export default function Home() {
 
             {/* Events List */}
             <Suspense fallback={<div>Loading events...</div>}>
-              <EventsList limit={3} />
+              <EventsList limit={3} initialEvents={events} />
             </Suspense>
 
             {/* View All Events Button */}
@@ -539,7 +526,7 @@ export default function Home() {
                 Listen to our latest sermons and be inspired by the Word of God.
               </p>
             </div>
-            <SermonsList sermons={sermons} isLoading={isLoading} />
+            <SermonsList sermons={sermons} />
             <div className="text-center mt-12">
               <Link
                 href="/sermons"

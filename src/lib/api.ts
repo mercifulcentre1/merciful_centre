@@ -54,7 +54,7 @@ export async function fetchApi<T>(
 // Settings API
 export async function fetchSettings(): Promise<Record<string, string>> {
   try {
-    const response = await fetch(buildApiUrl("/settings"));
+    const response = await fetch(buildApiUrl("/settings"), { next: { revalidate: 60 } });
     if (!response.ok) return {};
     const data = await response.json();
     return data.settings || {};
@@ -265,7 +265,7 @@ export const users = {
 // Fetch events
 export async function fetchEvents() {
   try {
-    const response = await fetch(buildApiUrl("/events"));
+    const response = await fetch(buildApiUrl("/events"), { next: { revalidate: 60 } });
     if (!response.ok) return [];
     const data = await response.json();
     return data.events || [];
@@ -278,7 +278,7 @@ export async function fetchEvents() {
 // Fetch sermons
 export async function fetchSermons() {
   try {
-    const response = await fetch(buildApiUrl("/sermons"));
+    const response = await fetch(buildApiUrl("/sermons"), { next: { revalidate: 60 } });
     if (!response.ok) return [];
     const data = await response.json();
     return data.sermons || [];

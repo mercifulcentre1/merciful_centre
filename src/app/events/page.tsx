@@ -1,26 +1,11 @@
-"use client";
-
-import { motion } from "framer-motion";
-import { ArrowLongRightIcon } from "@heroicons/react/24/outline";
 import EventsList from "@/components/EventsList";
 import Image from "next/image";
+import { fetchEvents } from "@/lib/api";
+import { ArrowLongRightIcon } from "@heroicons/react/24/outline";
 
-// Animation variants
-const fadeIn = {
-  hidden: { opacity: 0, y: 20 },
-  visible: { opacity: 1, y: 0 },
-};
-
-const stagger = {
-  hidden: {},
-  visible: {
-    transition: {
-      staggerChildren: 0.1,
-    },
-  },
-};
-
-export default function EventsPage() {
+export default async function EventsPage() {
+  const events = await fetchEvents();
+  
   return (
     <main className="min-h-screen bg-white">
       {/* Hero Section */}
@@ -49,7 +34,7 @@ export default function EventsPage() {
       {/* Events List Section */}
       <section className="py-16">
         <div className="container mx-auto px-4">
-          <EventsList />
+          <EventsList initialEvents={events} />
         </div>
       </section>
 
@@ -61,18 +46,11 @@ export default function EventsPage() {
         </div>
 
         <div className="container mx-auto px-4 relative">
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={stagger}
-            className="max-w-4xl mx-auto text-center"
-          >
-            <motion.div
-              variants={fadeIn}
-              className="bg-white rounded-3xl p-12 shadow-xl"
-            >
-              <h2 className="text-4xl font-bold text-gray-900 mb-6">
+            <div className="text-center space-y-4">
+              <span className="text-purple-600 font-medium tracking-wider text-sm uppercase bg-purple-50 px-4 py-2 rounded-full">
+                Newsletter
+              </span>
+              <h2 className="text-4xl md:text-5xl font-bold text-gray-900">
                 Stay Connected
               </h2>
               <p className="text-xl text-gray-600 mb-8">
@@ -93,8 +71,7 @@ export default function EventsPage() {
                   <ArrowLongRightIcon className="w-5 h-5" />
                 </button>
               </form>
-            </motion.div>
-          </motion.div>
+            </div>
         </div>
       </section>
     </main>
