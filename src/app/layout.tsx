@@ -6,8 +6,8 @@ import ClientRoot from "@/components/layout/ClientRoot";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Miracle Center Church",
-  description: "Welcome to Miracle Center Church",
+  title: "Merciful Centre",
+  description: "Welcome to Merciful Centre",
 };
 
 export default function RootLayout({

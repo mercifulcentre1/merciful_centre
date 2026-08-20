@@ -39,7 +39,7 @@ export default function LoginPage() {
     <div className="min-h-screen bg-gray-50 flex flex-col items-center justify-center p-4">
       <div className="mb-8 text-center">
         <h1 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-500 font-poppins">
-          Miracle Center
+          Merciful Centre
         </h1>
         <p className="text-gray-600 mt-2">Admin Portal</p>
       </div>
