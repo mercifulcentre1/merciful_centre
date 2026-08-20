@@ -106,19 +106,19 @@ const CountdownTimer = () => {
   if (error) {
     return (
       <div className="text-center py-8">
-        <p className="text-red-500">{error}</p>
+        <p className="text-red-500 bg-red-50 p-4 rounded-xl inline-block border border-red-100">{error}</p>
       </div>
     );
   }
 
   return (
-    <div className="space-y-8">
+    <div className="space-y-12">
       {/* Service Details */}
-      <div className="grid grid-cols-2 gap-6">
-        <div className="bg-white/10 backdrop-blur-lg rounded-2xl p-6 border border-white/10">
-          <div className="w-10 h-10 bg-purple-500/20 rounded-lg flex items-center justify-center mb-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="bg-white/5 rounded-2xl p-6 md:p-8 border border-white/10 hover:bg-white/10 transition-colors">
+          <div className="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center mb-6">
             <svg
-              className="w-5 h-5 text-purple-400"
+              className="w-6 h-6 text-purple-300"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -131,8 +131,8 @@ const CountdownTimer = () => {
               />
             </svg>
           </div>
-          <h3 className="text-white font-poppins font-semibold mb-1">Time</h3>
-          <p className="text-purple-200">
+          <h3 className="text-white font-poppins font-semibold mb-2 text-lg">Time</h3>
+          <p className="text-purple-200 font-medium">
             {nextService ? (
               <>
                 {nextService.dayOfWeek} at {nextService.time}
@@ -143,10 +143,10 @@ const CountdownTimer = () => {
           </p>
         </div>
 
-        <div className="bg-white/10 backdrop-blur-lg rounded-2xl p-6 border border-white/10">
-          <div className="w-10 h-10 bg-purple-500/20 rounded-lg flex items-center justify-center mb-4">
+        <div className="bg-white/5 rounded-2xl p-6 md:p-8 border border-white/10 hover:bg-white/10 transition-colors">
+          <div className="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center mb-6">
             <svg
-              className="w-5 h-5 text-purple-400"
+              className="w-6 h-6 text-purple-300"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -165,49 +165,49 @@ const CountdownTimer = () => {
               />
             </svg>
           </div>
-          <h3 className="text-white font-poppins font-semibold mb-1">
+          <h3 className="text-white font-poppins font-semibold mb-2 text-lg">
             Location
           </h3>
-          <p className="text-purple-200">
+          <p className="text-purple-200 font-medium">
             {nextService?.location || "Loading..."}
           </p>
         </div>
       </div>
 
       {/* Countdown Timer */}
-      <div className="grid grid-cols-2 gap-4">
-        <div className="bg-white/5 backdrop-blur-lg rounded-2xl p-8 border border-white/10 text-center">
-          <span className="block text-5xl font-bold text-white mb-2">
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div className="bg-white/5 rounded-2xl p-8 border border-white/10 text-center">
+          <span className="block text-4xl md:text-5xl font-bold text-white mb-2 font-mono">
             {timeLeft.days}
           </span>
-          <span className="text-purple-300 font-poppins">Days</span>
+          <span className="text-purple-300 font-medium text-sm tracking-wider uppercase">Days</span>
         </div>
-        <div className="bg-white/5 backdrop-blur-lg rounded-2xl p-8 border border-white/10 text-center">
-          <span className="block text-5xl font-bold text-white mb-2">
+        <div className="bg-white/5 rounded-2xl p-8 border border-white/10 text-center">
+          <span className="block text-4xl md:text-5xl font-bold text-white mb-2 font-mono">
             {timeLeft.hours}
           </span>
-          <span className="text-purple-300 font-poppins">Hours</span>
+          <span className="text-purple-300 font-medium text-sm tracking-wider uppercase">Hours</span>
         </div>
-        <div className="bg-white/5 backdrop-blur-lg rounded-2xl p-8 border border-white/10 text-center">
-          <span className="block text-5xl font-bold text-white mb-2">
+        <div className="bg-white/5 rounded-2xl p-8 border border-white/10 text-center">
+          <span className="block text-4xl md:text-5xl font-bold text-white mb-2 font-mono">
             {timeLeft.minutes}
           </span>
-          <span className="text-purple-300 font-poppins">Minutes</span>
+          <span className="text-purple-300 font-medium text-sm tracking-wider uppercase">Minutes</span>
         </div>
-        <div className="bg-white/5 backdrop-blur-lg rounded-2xl p-8 border border-white/10 text-center">
-          <span className="block text-5xl font-bold text-white mb-2">
+        <div className="bg-white/5 rounded-2xl p-8 border border-white/10 text-center">
+          <span className="block text-4xl md:text-5xl font-bold text-white mb-2 font-mono">
             {timeLeft.seconds}
           </span>
-          <span className="text-purple-300 font-poppins">Seconds</span>
+          <span className="text-purple-300 font-medium text-sm tracking-wider uppercase">Seconds</span>
         </div>
       </div>
 
       {/* Live Stream Button */}
       {nextService?.isLiveStreamAvailable && (
-        <div className="pt-4">
+        <div className="pt-6 text-center">
           <Link
             href={nextService.streamUrl || "/live"}
-            className="inline-flex items-center gap-2 bg-purple-600 text-white px-8 py-4 rounded-full font-poppins font-medium hover:bg-purple-700 transition-colors group"
+            className="inline-flex items-center justify-center gap-2 bg-white text-purple-900 px-8 py-4 rounded-xl font-medium hover:bg-gray-50 transition-colors group w-full md:w-auto shadow-lg"
           >
             Watch Live Stream
             <svg

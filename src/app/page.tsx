@@ -462,32 +462,19 @@ export default async function Home() {
       </section>
 
       {/* Next Service Countdown Section */}
-      <section className="py-24 bg-purple-900 relative overflow-hidden">
-        {/* Background Pattern */}
-        <div className="absolute inset-0">
-          <div className="absolute inset-0 bg-gradient-to-br from-purple-900/90 to-black/95"></div>
-          <div
-            className="absolute inset-0"
-            style={{
-              backgroundImage: 'url("/images/pattern-grid.svg")',
-              backgroundRepeat: "repeat",
-              opacity: 0.1,
-            }}
-          ></div>
-        </div>
-
+      <section className="py-24 bg-[#1a0b2e] relative overflow-hidden">
         <div className="container mx-auto px-4 relative">
-          <div className="max-w-7xl mx-auto">
+          <div className="max-w-5xl mx-auto">
             {/* Section Header */}
             <div className="text-center mb-16">
-              <span className="inline-flex items-center gap-2 text-purple-400 font-poppins text-sm font-medium tracking-wider">
-                <span className="flex h-2 w-2">
-                  <span className="animate-ping absolute inline-flex h-2 w-2 rounded-full bg-purple-400 opacity-75"></span>
-                  <span className="relative inline-flex rounded-full h-2 w-2 bg-purple-500"></span>
+              <span className="inline-flex items-center gap-2 text-purple-300 font-medium text-sm tracking-wider uppercase">
+                <span className="flex h-2 w-2 relative">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-purple-300 opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-purple-300"></span>
                 </span>
                 NEXT LIVE SERVICE
               </span>
-              <h2 className="mt-4 text-4xl lg:text-5xl font-bold font-poppins text-white">
+              <h2 className="mt-4 text-4xl lg:text-5xl font-bold text-white">
                 Join Us This Sunday
               </h2>
               <p className="mt-4 text-purple-200 text-lg max-w-2xl mx-auto">
@@ -497,14 +484,19 @@ export default async function Home() {
             </div>
 
             {/* Countdown Timer */}
-            <div className="max-w-3xl mx-auto">
+            <div className="max-w-4xl mx-auto">
               <Suspense
                 fallback={
                   <div className="text-white text-center">
                     <div className="animate-pulse">
-                      <div className="h-8 bg-purple-600/20 rounded w-3/4 mx-auto mb-4"></div>
-                      <div className="h-24 bg-purple-600/20 rounded mb-4"></div>
-                      <div className="h-12 bg-purple-600/20 rounded w-1/2 mx-auto"></div>
+                      <div className="h-8 bg-purple-800 rounded w-1/4 mx-auto mb-10"></div>
+                      <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+                        <div className="h-32 bg-purple-800 rounded-2xl"></div>
+                        <div className="h-32 bg-purple-800 rounded-2xl"></div>
+                        <div className="h-32 bg-purple-800 rounded-2xl"></div>
+                        <div className="h-32 bg-purple-800 rounded-2xl"></div>
+                      </div>
+                      <div className="h-12 bg-purple-800 rounded-xl w-48 mx-auto"></div>
                     </div>
                   </div>
                 }
@@ -521,7 +513,7 @@ export default async function Home() {
         <div className="container mx-auto px-4">
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-12">
-              <h2 className="text-4xl font-bold mb-4">Recent Sermons</h2>
+              <h2 className="text-4xl font-bold mb-4 font-poppins mine-text-black">Recent Sermons</h2>
               <p className="text-gray-600 max-w-2xl mx-auto">
                 Listen to our latest sermons and be inspired by the Word of God.
               </p>
