@@ -73,15 +73,15 @@ export default function LivestreamPage() {
   ): string => {
     try {
       if (platform === "youtube") {
-        // Handle different YouTube URL formats
-        const videoId = url.includes("youtube.com/watch?v=")
-          ? new URL(url).searchParams.get("v")
-          : url.includes("youtu.be/")
-          ? url.split("youtu.be/")[1]
-          : url.includes("youtube.com/embed/")
-          ? url.split("youtube.com/embed/")[1]
-          : url;
-        return `https://www.youtube.com/embed/${videoId}`;
+        // Handle different YouTube URL formats including /live/ and youtu.be/ with query params
+        const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|&v=|live\/)([^#&?]*).*/;
+        const match = url.match(regExp);
+        const videoId = (match && match[2].length === 11) ? match[2] : null;
+        
+        if (videoId) {
+          return `https://www.youtube.com/embed/${videoId}`;
+        }
+        return url; // Fallback if no valid ID found
       } else {
         // Handle Facebook video URL
         if (url.includes("facebook.com/plugins/video.php")) {
