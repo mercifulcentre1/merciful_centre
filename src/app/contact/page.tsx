@@ -63,9 +63,9 @@ const contactInfo = [
 ];
 
 const inputStyles =
-  "block w-full pl-10 pr-4 py-3 rounded-xl border-gray-200 focus:border-purple-500 focus:ring-purple-500 transition-colors duration-200 placeholder-gray-400 text-gray-900";
+  "block w-full pl-10 pr-4 py-3 rounded-xl border border-gray-100 bg-gray-50/50 focus:bg-white focus:border-purple-200 focus:ring-4 focus:ring-purple-50/50 transition-all duration-200 placeholder-gray-400 text-gray-900";
 const textareaStyles =
-  "block w-full pl-10 pr-4 py-3 rounded-xl border-gray-200 focus:border-purple-500 focus:ring-purple-500 transition-colors duration-200 placeholder-gray-400 text-gray-900 min-h-[150px]";
+  "block w-full pl-10 pr-4 py-3 rounded-xl border border-gray-100 bg-gray-50/50 focus:bg-white focus:border-purple-200 focus:ring-4 focus:ring-purple-50/50 transition-all duration-200 placeholder-gray-400 text-gray-900 min-h-[150px]";
 
 export default function ContactPage() {
   const [formData, setFormData] = useState<ContactFormData>({
@@ -109,7 +109,7 @@ export default function ContactPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 via-white to-purple-100">
+    <div className="min-h-screen bg-white">
       {/* Hero Section */}
       <section className="relative w-full h-[70vh] min-h-[500px] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
@@ -149,32 +149,30 @@ export default function ContactPage() {
       </section>
 
       {/* Contact Info Cards */}
-      <section className="py-16 bg-transparent">
+      <section className="py-24 bg-white">
         <div className="container mx-auto px-4">
           <motion.div
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true }}
+            viewport={{ once: true, margin: "-100px" }}
             variants={stagger}
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16"
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-24 max-w-7xl mx-auto"
           >
             {contactInfo.map((info, index) => (
               <motion.div
                 key={index}
                 variants={scaleUp}
-                className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300"
+                className="group bg-white rounded-2xl p-8 border border-gray-100 shadow-sm hover:shadow-[0_8px_30px_rgb(0,0,0,0.06)] hover:border-purple-100 transition-all duration-500 transform hover:-translate-y-1"
               >
-                <div className="flex items-center space-x-4">
-                  <div className="flex-shrink-0">
-                    <div className="w-12 h-12 rounded-full bg-purple-100 flex items-center justify-center text-purple-600">
-                      {info.icon}
-                    </div>
+                <div className="flex flex-col items-center text-center space-y-4">
+                  <div className="w-14 h-14 rounded-full bg-gray-50 flex items-center justify-center text-gray-500 group-hover:bg-purple-50 group-hover:text-purple-600 transition-all duration-500 group-hover:scale-110">
+                    {info.icon}
                   </div>
                   <div>
-                    <h3 className="text-lg font-semibold text-gray-900">
+                    <h3 className="text-lg font-semibold text-gray-900 mb-2">
                       {info.title}
                     </h3>
-                    <p className="text-gray-600">{info.details}</p>
+                    <p className="text-sm text-gray-500 font-medium">{info.details}</p>
                   </div>
                 </div>
               </motion.div>
@@ -185,20 +183,23 @@ export default function ContactPage() {
           <motion.div
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true }}
+            viewport={{ once: true, margin: "-100px" }}
             variants={stagger}
             className="max-w-4xl mx-auto"
           >
             <motion.div
               variants={scaleUp}
-              className="relative bg-white rounded-3xl p-8 md:p-12 shadow-xl border border-purple-100"
+              className="bg-white rounded-2xl p-8 md:p-12 shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-gray-100"
             >
-              <div className="absolute inset-0 bg-gradient-to-br from-purple-50/50 to-white rounded-3xl" />
-
               <div className="relative">
-                <h2 className="text-3xl font-bold text-gray-900 mb-8">
-                  Send us a Message
-                </h2>
+                <div className="text-center mb-10">
+                  <span className="text-purple-600 font-medium tracking-wider text-sm uppercase mb-4 block">
+                    Get in Touch
+                  </span>
+                  <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
+                    Send us a Message
+                  </h2>
+                </div>
 
                 <form onSubmit={handleSubmit} className="space-y-8">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">

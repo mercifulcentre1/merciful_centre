@@ -134,38 +134,58 @@ export default function GivePage() {
         </div>
       </section>
 
-      {/* Giving Methods Cards */}
-      <section className="py-20 bg-transparent">
+      {/* Giving Methods Section */}
+      <section id="ways-to-give" className="py-24 bg-white">
         <div className="container mx-auto px-4">
           <motion.div
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true }}
+            viewport={{ once: true, margin: "-100px" }}
             variants={stagger}
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 max-w-5xl mx-auto"
+            className="text-center mb-16"
+          >
+            <span className="text-purple-600 font-medium tracking-wider text-sm uppercase mb-4 block">
+              Ways to Give
+            </span>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
+              Choose Your Preferred Method
+            </h2>
+          </motion.div>
+
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+            variants={stagger}
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto"
           >
             {givingMethods.map((method) => (
               <motion.div
                 key={method.name}
                 variants={scaleUp}
-                className={`group relative bg-gradient-to-br ${method.bg} rounded-[2rem] p-8 shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:translate-y-[-8px] border border-purple-100`}
+                className="group relative bg-white rounded-2xl p-8 border border-gray-100 shadow-sm hover:shadow-[0_8px_30px_rgb(0,0,0,0.06)] hover:border-purple-100 transition-all duration-500 transform hover:-translate-y-1"
               >
-                <div className="flex items-center justify-center mb-6">
+                {/* Minimal Icon Container */}
+                <div className="w-14 h-14 rounded-full bg-gray-50 flex items-center justify-center mb-6 group-hover:bg-purple-50 group-hover:scale-110 transition-all duration-500">
                   {renderIcon(method.icon)}
                 </div>
-                <h3 className="text-2xl font-bold text-gray-900 text-center mb-4">
+                
+                <h3 className="text-xl font-semibold text-gray-900 mb-6">
                   {method.name}
                 </h3>
-                <ul className="space-y-2 mb-4">
+                
+                <ul className="space-y-0">
                   {method.details.map((d) => (
                     <li
                       key={d.label}
-                      className="flex justify-between text-gray-700 bg-white/60 rounded-lg px-4 py-2"
+                      className="flex flex-col py-3 border-b border-gray-50 last:border-0"
                     >
-                      <span className="font-medium text-gray-500">
-                        {d.label}:
+                      <span className="text-sm font-medium text-gray-400 mb-1">
+                        {d.label}
                       </span>
-                      <span className="font-mono text-gray-900">{d.value}</span>
+                      <span className="text-gray-900 font-medium font-mono text-[15px]">
+                        {d.value}
+                      </span>
                     </li>
                   ))}
                 </ul>
