@@ -158,23 +158,19 @@ export default function LivestreamPage() {
                 <span>LIVE STREAM</span>
               </span>
             </motion.div>
-            {/* Dynamic Title and Description */}
-            {streamInfo?.stream_title && (
-              <motion.h1
-                variants={fadeIn}
-                className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight"
-              >
-                {streamInfo.stream_title}
-              </motion.h1>
-            )}
-            {streamInfo?.stream_description && (
-              <motion.p
-                variants={fadeIn}
-                className="text-xl text-gray-300 mb-12 max-w-2xl mx-auto"
-              >
-                {streamInfo.stream_description}
-              </motion.p>
-            )}
+            {/* Static Title and Description */}
+            <motion.h1
+              variants={fadeIn}
+              className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight"
+            >
+              Join Us Live
+            </motion.h1>
+            <motion.p
+              variants={fadeIn}
+              className="text-xl text-gray-300 mb-12 max-w-2xl mx-auto"
+            >
+              Experience our services, teachings, and special events live from wherever you are.
+            </motion.p>
           </motion.div>
         </div>
       </section>
